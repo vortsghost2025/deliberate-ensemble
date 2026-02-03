@@ -1,0 +1,56 @@
+# AGENT CONTEXT QUICK REFERENCE
+
+**Project**: Multi-Agent Orchestrator Trading Bot  
+**Scope**: C:\workspace\ (THIS WINDOW ONLY)  
+**Agent**: GitHub Copilot (single-project focused)  
+**Status**: Soak test active, 1 open trade  
+
+---
+
+## ✓ SAFE REQUESTS FOR THIS AGENT
+- "Run another soak test cycle"
+- "Check the status of the open position"
+- "What's in the latest logs?"
+- "Tighten the thresholds"
+- "Add BTC back to the trading pairs"
+- "Show me the risk debug output"
+- "Is the daily reset working?"
+
+## ✗ UNSAFE REQUESTS (DIFFERENT PROJECT)
+- "Add lag_logger to track execution latency"
+- "Implement the symbol gating manager"
+- "Wire up the early DD breaker"
+- "Run DRY_RUN mode"
+- "Check the KuCoin bot status"
+- "Integrate the gating decisions"
+- "Let me access the 2-week bot"
+
+## IF YOU MAKE A MISTAKE
+
+If you ask for something from the wrong project, the agent will:
+1. Detect the context mismatch
+2. Output a warning
+3. Ask for clarification
+4. NOT proceed until you confirm
+
+That's working as designed.
+
+## IF YOU WANT TO SWITCH PROJECTS
+
+1. Tell the agent: "I'm done with the orchestrator bot"
+2. Close this VS Code window (or open a new one)
+3. Open the KuCoin bot folder in a NEW window
+4. Create/copy the identity files for that project
+5. Tell the new agent instance: "This is the KuCoin bot, read .project-identity.txt"
+
+---
+
+## FILES PROTECTING THIS PROJECT
+
+- `.project-identity.txt` → Defines this project's scope
+- `AGENT_OPERATIONAL_PROTOCOL.md` → Rules for the agent
+- `AGENT_CONTEXT_VALIDATION.md` → How to detect mismatches
+- `AGENT_CONTEXT_CHECK.ps1` → Sanity check script
+- `MULTI_PROJECT_SEPARATION_GUIDE.md` → Full setup guide
+
+Read any of these if the agent gets confused.

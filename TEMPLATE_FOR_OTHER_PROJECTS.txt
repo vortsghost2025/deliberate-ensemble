@@ -1,0 +1,108 @@
+# GUARDRAIL FILES TEMPLATE FOR OTHER PROJECTS
+
+Copy-paste these into any new project folder and customize.
+
+---
+
+## FILE 1: .project-identity.txt
+
+```
+PROJECT_NAME: [YOUR PROJECT NAME]
+PROJECT_TYPE: [TYPE: Trading Bot, Data Pipeline, etc]
+VERSION: [VERSION NUMBER]
+CREATED: [DATE]
+PURPOSE: [WHAT IT DOES]
+
+SCOPE:
+- [Key feature 1]
+- [Key feature 2]
+
+AGENTS IN THIS PROJECT:
+- [Agent 1]
+- [Agent 2]
+
+KEY FILES:
+- [Important file 1]
+- [Important file 2]
+
+CRITICAL RULE FOR AGENTS:
+If a request mentions:
+  - [FEATURE FROM OTHER PROJECT]
+  - [COMPONENT FROM OTHER PROJECT]
+THEN: This is NOT for this project. Ask user for clarification.
+
+CROSS-PROJECT CONTAMINATION PREVENTION:
+- Do NOT use terminal to scan outside this folder
+- Do NOT read/edit files in other projects
+- If context mismatch detected: STOP and ask user
+```
+
+---
+
+## FILE 2: AGENT_OPERATIONAL_PROTOCOL.md
+
+```
+# AGENT OPERATIONAL PROTOCOL
+## [PROJECT NAME]
+
+**Last Updated**: [DATE]
+**Project**: [PATH]
+**Status**: [CURRENT STATUS]
+
+---
+
+## MISSION STATEMENT
+This agent is responsible for ONE project only:
+- [This project description]
+- NOT responsible for [Other project], [Another project]
+
+---
+
+## CONTEXT VALIDATION (DO THIS FIRST)
+
+### Before accepting ANY request:
+
+1. **Read `.project-identity.txt`** in the workspace root
+2. **Classify the request**:
+   - Is it about [THIS PROJECT KEYWORDS]? → **MINE**
+   - Is it about [OTHER PROJECT KEYWORDS]? → **NOT MINE**
+   - Is it ambiguous? → **ASK FOR CLARIFICATION**
+
+[... rest of protocol adapted for your project ...]
+```
+
+---
+
+## FILE 3: MULTI_PROJECT_SEPARATION_GUIDE.md
+
+```
+# MULTI-PROJECT SEPARATION CHECKLIST
+
+## Current Projects
+
+1. **[Project A Name]**
+   - Path: `[PATH]`
+   - Status: [Status]
+   
+2. **[Project B Name]**
+   - Path: `[PATH]`
+   - Status: [Status]
+
+[... rest of guide ...]
+```
+
+---
+
+## How to Use This Template
+
+1. Create a new folder for your project
+2. Open it in a NEW VS Code window
+3. Copy the sections above into new files
+4. **Customize** PROJECT_NAME, PATH, KEYWORDS, etc.
+5. Save as:
+   - `.project-identity.txt`
+   - `AGENT_OPERATIONAL_PROTOCOL.md`
+   - `MULTI_PROJECT_SEPARATION_GUIDE.md`
+
+Then tell the agent in THAT window to read the identity file.
+```

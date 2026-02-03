@@ -1,0 +1,41 @@
+PROJECT_NAME: Multi-Agent Orchestrator Trading Bot
+PROJECT_TYPE: Paper Trading System with Risk Management
+VERSION: 1.0-orchestrator
+CREATED: 2026-02-02 (built by collab AI + LMArena)
+PURPOSE: Safe, multi-agent orchestration for SOL/BTC trading with real prices and risk gates
+
+SCOPE:
+- Single agent (GitHub Copilot) working on this project
+- Autonomous soak testing with open positions
+- Real market data, paper execution
+- Daily risk reset, status snapshots
+
+AGENTS IN THIS PROJECT:
+- OrchestratorAgent (main conductor)
+- DataFetchingAgent (CoinGecko prices)
+- MarketAnalysisAgent (signal detection)
+- BacktestingAgent (win rate validation)
+- RiskManagementAgent (position sizing, gates)
+- ExecutionAgent (paper trade tracking)
+- MonitoringAgent (logging, alerts)
+
+KEY FILES:
+- main.py (entry point)
+- agents/orchestrator.py (workflow)
+- agents/risk_manager.py (core safety)
+- agents/execution_agent.py (trade tracking)
+
+CRITICAL RULE FOR AGENTS:
+If a request mentions:
+  - lag_logger, lag_metrics, execution latency
+  - symbol_gater, gating_manager, trade gating
+  - early_dd, early drawdown breaker
+  - DRY_RUN mode, LIVE_TRADING flag
+  - KuCoin API calls, margin trading
+THEN: This is NOT for this project. Ask user for clarification and project context.
+
+CROSS-PROJECT CONTAMINATION PREVENTION:
+- Do NOT use terminal to scan C:\ drive or other projects
+- Do NOT read/edit files outside C:\workspace\
+- Do NOT attempt to integrate KuCoin bot logic
+- If context mismatch detected: STOP and ask user which project they mean
