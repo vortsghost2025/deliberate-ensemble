@@ -45,7 +45,7 @@ def initialize_agents(config: dict) -> dict:
     print("="*60 + "\n")
     
     # Create orchestrator (main conductor)
-    orchestrator = OrchestratorAgent(config)
+    orchestrator = OrchestratorAgent(config.get('orchestrator', {}))
     
     # Create and register all sub-agents
     print("Initializing agents...")
@@ -217,7 +217,7 @@ def main():
     max_daily_loss_usd = _env_float("MAX_DAILY_LOSS_USD")
     max_open_positions = _env_int("MAX_OPEN_POSITIONS")
     max_trades_per_session = _env_int("MAX_TRADES_PER_SESSION")
-    account_balance_usd = _env_float("ACCOUNT_BALANCE_USD", 10000)
+    account_balance_usd = _env_float("ACCOUNT_BALANCE", None) or _env_float("ACCOUNT_BALANCE_USD", None)
 
     missing_live = []
     if live_mode_requested:
@@ -246,6 +246,11 @@ def main():
             "LIVE_MODE requested but missing/invalid env vars: %s. Falling back to paper trading.",
             ", ".join(missing_live),
         )
+    
+    # CRITICAL: Warn if live mode without balance configured
+    if live_mode and not account_balance_usd:
+        logger.error("CRITICAL: Live mode enabled but no ACCOUNT_BALANCE set - this is dangerous!")
+        logger.error("Position sizing will be incorrect. Set ACCOUNT_BALANCE or ACCOUNT_BALANCE_USD in .env")
 
     logger.info(
         "Startup config: live_mode=%s, exchange=%s, order_type=%s, slippage_tolerance_percent=%s, "
@@ -275,13 +280,17 @@ def main():
         },
         'risk_manager': {
             'account_balance': account_balance_usd if account_balance_usd is not None else 10000,
-            'risk_per_trade': 0.015,  # 1.5% for soak test
+            'risk_per_trade': 0.01,  # 1% risk per trade (constitutional limit)
             'min_risk_reward_ratio': 1.5,
             'max_daily_loss': 0.05,  # 5% max daily loss
-            'min_signal_strength': 0.05,
-            'min_win_rate': 0.30,
-            'min_position_size_units': min_position_size_units,
-            'enforce_min_position_size_only': True
+            'min_signal_strength': 0.10,  # 10% minimum signal strength
+            'min_win_rate': 0.45,  # 45% minimum win rate
+            'min_position_size_units': 0.01,  # Minimum 0.01 SOL
+            'min_position_size_by_pair': {
+                'SOL/USDT': 0.01,  # 0.01 SOL minimum
+                'BTC/USDT': 0.0001  # 0.0001 BTC minimum
+            },
+            'enforce_min_position_size_only': False  # Use dynamic position sizing based on risk
         },
         'backtester': {
             'min_win_rate': 0.45,

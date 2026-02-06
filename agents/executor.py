@@ -120,6 +120,13 @@ class ExecutionAgent(BaseAgent):
         account_balance: Optional[float],
     ) -> Optional[str]:
         """Validate live trade against configured risk limits."""
+        
+        # CRITICAL: Check if position value exceeds account balance
+        position_value = entry_price * position_size
+        if account_balance is not None:
+            if position_value > account_balance * 1.1:  # 10% buffer for fees
+                return f"CRITICAL: Position value ${position_value:.2f} exceeds account balance ${account_balance:.2f}"
+        
         if self.order_type not in {'market', 'limit'}:
             return f"Unsupported order type: {self.order_type}"
         if self.max_open_positions is not None and len(self.open_positions) >= self.max_open_positions:
@@ -178,6 +185,15 @@ class ExecutionAgent(BaseAgent):
         # Convert pair format: BTC/USDT -> BTC-USDT
         symbol = pair.replace('/', '-')
         
+        # Round position size to proper increment
+        # SOL: 1 decimal, BTC: 4 decimals, ETH: 3 decimals
+        if 'SOL' in symbol:
+            position_size = round(position_size, 1)
+        elif 'BTC' in symbol:
+            position_size = round(position_size, 4)
+        else:
+            position_size = round(position_size, 2)
+        
         try:
             # Place main entry order
             if self.order_type == 'market':
@@ -206,34 +222,41 @@ class ExecutionAgent(BaseAgent):
             if stop_loss > 0:
                 try:
                     stop_side = 'sell' if side == 'buy' else 'buy'
+                    # Round stop_loss price to proper increment
+                    stop_loss_rounded = round(stop_loss, 2)
                     stop_order = self.kucoin_client.create_stop_order(
                         symbol=symbol,
                         side=stop_side,
+                        type='limit',
                         stop='loss',
-                        stopPrice=str(stop_loss),
+                        stop_price=str(stop_loss_rounded),
                         size=str(position_size),
-                        price=str(stop_loss * 0.99)  # Slightly below stop for market
+                        price=str(stop_loss_rounded * 0.99)  # Slightly below stop for limit
                     )
                     stop_order_id = stop_order.get('orderId')
-                    self.logger.info(f"✅ Stop-loss order placed: {stop_order_id} @ ${stop_loss}")
+                    self.logger.info(f"✅ Stop-loss order placed: {stop_order_id} @ ${stop_loss_rounded}")
                 except Exception as e:
-                    self.logger.warning(f"⚠️ Failed to place stop-loss order: {e}")
+                    self.logger.error(f"❌ CRITICAL: Failed to place stop-loss order: {e}")
+                    self.logger.error(f"❌ Position is UNPROTECTED - manual intervention required!")
             
             # Place take-profit order (conditional)
             tp_order_id = None
             if take_profit > 0:
                 try:
                     tp_side = 'sell' if side == 'buy' else 'buy'
+                    # Round take_profit price to proper increment
+                    take_profit_rounded = round(take_profit, 2)
                     tp_order = self.kucoin_client.create_limit_order(
                         symbol=symbol,
                         side=tp_side,
-                        price=str(take_profit),
+                        price=str(take_profit_rounded),
                         size=str(position_size)
                     )
                     tp_order_id = tp_order.get('orderId')
-                    self.logger.info(f"✅ Take-profit order placed: {tp_order_id} @ ${take_profit}")
+                    self.logger.info(f"✅ Take-profit order placed: {tp_order_id} @ ${take_profit_rounded}")
                 except Exception as e:
-                    self.logger.warning(f"⚠️ Failed to place take-profit order: {e}")
+                    self.logger.error(f"❌ CRITICAL: Failed to place take-profit order: {e}")
+                    self.logger.error(f"❌ Position has no profit target - manual intervention required!")
             
             return {
                 'order_id': order_id,
