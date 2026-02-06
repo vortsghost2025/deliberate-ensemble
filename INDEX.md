@@ -53,6 +53,7 @@ type logs\trading_bot.log
 |------|---------|------|
 | **[TESTING_AND_DEPLOYMENT.md](TESTING_AND_DEPLOYMENT.md)** | Complete test suite & deployment phases | 30 min |
 | **[DEPLOYMENT_CHECKLIST.md](DEPLOYMENT_CHECKLIST.md)** | Production readiness verification | 5 min |
+| **[SECTION_12_FIRST_LIVE_VALIDATION.md](SECTION_12_FIRST_LIVE_VALIDATION.md)** | Live trading validation proof (Feb 6, 2026) | 15 min |
 
 **Navigation:**
 | File | Purpose | Time |
