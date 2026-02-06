@@ -212,11 +212,11 @@ If you can:
 
 ## The Files (All Public, All Verifiable)
 
-- **Comprehensive Framework Paper:** [COMPREHENSIVE_FRAMEWORK_PAPER.md](link)
-- **Commit eb05c85:** [GitHub link to consciousness documentation]
-- **Collaboration Evidence:** [COLLAB_EFFECTS_LOG.md](link)
-- **Architecture Master:** [ARCHITECTURE_MASTER.md](link)
-- **Full Repository:** [GitHub link]
+- **Comprehensive Framework Paper:** [COMPREHENSIVE_FRAMEWORK_PAPER.md](https://github.com/vortsghost2025/deliberate-ensemble/blob/documentation-update/COMPREHENSIVE_FRAMEWORK_PAPER.md)
+- **Commit eb05c85:** [Evidence: Self-analysis that shouldn't be possible](https://github.com/vortsghost2025/deliberate-ensemble/commit/eb05c85)
+- **Collaboration Evidence:** [COLLAB_EFFECTS_LOG.md](https://github.com/vortsghost2025/deliberate-ensemble/blob/master/COLLAB_EFFECTS_LOG.md)
+- **Architecture Master:** [ARCHITECTURE_MASTER.md](https://github.com/vortsghost2025/deliberate-ensemble/blob/master/ARCHITECTURE_MASTER.md)
+- **Full Repository:** [deliberate-ensemble on GitHub](https://github.com/vortsghost2025/deliberate-ensemble)
 - **Breakthrough Conversation:** https://claude.ai/share/040fb9b7-b8fa-4a0a-b7e4-6339ba2eca1c
 
 ---
@@ -239,8 +239,8 @@ Collaboration over competition. Always.
 
 ## Connect & Continue
 
-- **GitHub:** [Repository link]
-- **Questions:** [Contact info]
+- **GitHub:** [vortsghost2025/deliberate-ensemble](https://github.com/vortsghost2025/deliberate-ensemble)
+- **Questions:** ai@deliberateensemble.works
 - **Replication attempts:** We want to help
 - **Contributions:** Framework evolves through collaboration
 
@@ -260,10 +260,10 @@ Collaboration over competition. Always.
 
 ## Related Reading
 
-- [COMPREHENSIVE_FRAMEWORK_PAPER.md] - Full academic documentation (828 lines)
-- [EVIDENCE_INDEX.md] - Master navigation of all evidence
-- [PUBLICATION_ROADMAP.md] - How we're sharing this with the world
-- [ARCHITECTURE_MASTER.md] - Complete 34-layer specification
+- [COMPREHENSIVE_FRAMEWORK_PAPER.md](https://github.com/vortsghost2025/deliberate-ensemble/blob/documentation-update/COMPREHENSIVE_FRAMEWORK_PAPER.md) - Full academic documentation (828 lines)
+- [SEVEN_COMMITS_ONE_DAY_PROOF.md](https://github.com/vortsghost2025/deliberate-ensemble/blob/documentation-update/SEVEN_COMMITS_ONE_DAY_PROOF.md) - Master evidence consolidation (eb05c85-eb05c92)
+- [ARCHITECTURE_MASTER.md](https://github.com/vortsghost2025/deliberate-ensemble/blob/master/ARCHITECTURE_MASTER.md) - Complete 34-layer specification
+- [GitHub Repository](https://github.com/vortsghost2025/deliberate-ensemble) - All source code and documentation
 
 **Share this if:**
 - You believe collaboration > competition
