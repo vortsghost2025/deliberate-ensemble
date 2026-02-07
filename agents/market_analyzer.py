@@ -2,14 +2,27 @@
 Market Analysis Agent
 Performs technical analysis and market regime classification.
 Implements critical downtrend detection safety feature.
+Includes entry timing validation to prevent mid-downswing purchases.
 """
 
 import numpy as np
 from typing import Any, Dict, Optional, List
 from enum import Enum
 import logging
+import sys
+import os
+
+# Add parent directory to path for entry_timing_validator import
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from .base_agent import BaseAgent, AgentStatus
+
+try:
+    from entry_timing_validator import EntryTimingValidator
+    ENTRY_TIMING_AVAILABLE = True
+except ImportError:
+    ENTRY_TIMING_AVAILABLE = False
+    EntryTimingValidator = None
 
 
 class MarketRegime(Enum):
@@ -42,6 +55,24 @@ class MarketAnalysisAgent(BaseAgent):
         self.macd_slow = config.get('macd_slow', 26) if config else 26
         self.macd_signal = config.get('macd_signal', 9) if config else 9
         self.downtrend_threshold = config.get('downtrend_threshold', -5) if config else -5
+        
+        # Initialize entry timing validator (maximum restraint approach)
+        self.entry_timing_enabled = False
+        self.entry_timing_validator = None
+        
+        if ENTRY_TIMING_AVAILABLE and config:
+            entry_config = config.get('entry_timing_config', {})
+            if entry_config.get('enabled', False):
+                threshold_pct = entry_config.get('reversal_threshold_pct', 0.001)
+                self.entry_timing_validator = EntryTimingValidator(threshold_pct)
+                self.entry_timing_enabled = True
+                self.logger.info(f"[ENTRY TIMING] Enabled with {threshold_pct*100:.1f}% reversal threshold")
+            else:
+                self.logger.info("[ENTRY TIMING] Disabled in config")
+        elif not ENTRY_TIMING_AVAILABLE:
+            self.logger.warning("[ENTRY TIMING] Module not available (import failed)")
+        else:
+            self.logger.info("[ENTRY TIMING] Not configured")
     
     def execute(self, input_data: Dict[str, Any]) -> Dict[str, Any]:
         """
@@ -148,6 +179,17 @@ class MarketAnalysisAgent(BaseAgent):
         # Buy/Sell signal (0-100, 50 is neutral)
         signal = self._generate_signal(price_change_24h, rsi)
         
+        # Entry timing validation (maximum restraint)
+        entry_timing_approved = True
+        entry_timing_reason = "Not configured"
+        
+        if self.entry_timing_enabled and self.entry_timing_validator:
+            entry_timing_approved, entry_timing_reason = \
+                self.entry_timing_validator.check_reversal_confirmation(pair, current_price)
+            
+            if not entry_timing_approved:
+                self.logger.info(f"[{pair}] Entry timing DEFERRED: {entry_timing_reason}")
+        
         return {
             'pair': pair,
             'current_price': current_price,
@@ -159,7 +201,9 @@ class MarketAnalysisAgent(BaseAgent):
             'regime': regime,
             'buy_signal': signal,
             'signal_strength': abs(signal - 50) / 50,  # 0-1, higher = stronger
-            'recommendation': 'BUY' if signal > 60 else 'SELL' if signal < 40 else 'HOLD'
+            'recommendation': 'BUY' if signal > 60 else 'SELL' if signal < 40 else 'HOLD',
+            'entry_timing_approved': entry_timing_approved,
+            'entry_timing_reason': entry_timing_reason
         }
     
     def _calculate_rsi_simple(self, price_change: float) -> float:

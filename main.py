@@ -20,6 +20,17 @@ from agents import (
     MonitoringAgent
 )
 
+# Import configuration
+try:
+    from config import TRADING_CONFIG, RISK_CONFIG, API_CONFIG, ENTRY_TIMING_CONFIG
+    CONFIG_LOADED = True
+except ImportError:
+    CONFIG_LOADED = False
+    TRADING_CONFIG = None
+    RISK_CONFIG = None
+    API_CONFIG = None
+    ENTRY_TIMING_CONFIG = None
+
 
 def setup_logging():
     """Setup root logger configuration."""
@@ -219,6 +230,16 @@ def main():
     max_trades_per_session = _env_int("MAX_TRADES_PER_SESSION")
     account_balance_usd = _env_float("ACCOUNT_BALANCE", None) or _env_float("ACCOUNT_BALANCE_USD", None)
 
+    # Override with config.py if available (takes precedence over environment variables)
+    if CONFIG_LOADED and TRADING_CONFIG:
+        paper_trading_from_config = TRADING_CONFIG.get('paper_trading', True)
+        live_mode_requested = not paper_trading_from_config  # Invert: False paper = True live
+        account_balance_from_config = TRADING_CONFIG.get('account_balance')
+        if account_balance_from_config is not None:
+            account_balance_usd = float(account_balance_from_config)
+        
+        logger.info(f"[CONFIG.PY] Loaded: paper_trading={paper_trading_from_config}, account_balance=${account_balance_usd}, live_mode={live_mode_requested}")
+
     missing_live = []
     if live_mode_requested:
         if not exchange:
@@ -276,7 +297,8 @@ def main():
         },
         'market_analyzer': {
             'rsi_period': 14,
-            'downtrend_threshold': -5  # Flag bearish if -5% or worse
+            'downtrend_threshold': -5,  # Flag bearish if -5% or worse
+            'entry_timing_config': ENTRY_TIMING_CONFIG if CONFIG_LOADED and ENTRY_TIMING_CONFIG else {'enabled': False}
         },
         'risk_manager': {
             'account_balance': account_balance_usd if account_balance_usd is not None else 10000,
@@ -310,6 +332,10 @@ def main():
             'max_trades_per_session': max_trades_per_session,
             'live_api_key': live_api_key,
             'live_api_secret': live_api_secret,
+            # KuCoin API credentials from config.py
+            'api_key': API_CONFIG.get('api_key') if CONFIG_LOADED and API_CONFIG else None,
+            'api_secret': API_CONFIG.get('api_secret') if CONFIG_LOADED and API_CONFIG else None,
+            'api_passphrase': API_CONFIG.get('api_passphrase') if CONFIG_LOADED and API_CONFIG else None,
         },
         'monitor': {
             'logs_dir': './logs'

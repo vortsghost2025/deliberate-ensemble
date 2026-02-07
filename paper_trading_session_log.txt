@@ -1,0 +1,93 @@
+
+====================================================================================================
+  EXTENDED CONTINUOUS PAPER TRADING SESSION
+====================================================================================================
+
+Start Time: 2026-02-07T00:12:29.785587Z
+Target Duration: 30 minutes
+Starting Balance: $10,000.00
+Daily Risk Limit: $500.00 (5%)
+Strict Paper Mode: ENABLED
+Anomaly Detection: ENABLED
+
+
+[0m 0s elapsed | 29m 59s remaining] Cycles: 1 | Balance: $10,101.50 (+1.01%) | Positions: 0
+[OK] Cycle 1: Trade OPENED & CLOSED
+
+[0m 0s elapsed | 29m 59s remaining] Cycles: 2 | Balance: $10,203.00 (+2.03%) | Positions: 0
+[OK] Cycle 2: Trade OPENED & CLOSED
+
+[0m 0s elapsed | 29m 59s remaining] Cycles: 3 | Balance: $10,201.00 (+2.01%) | Positions: 0
+[OK] Cycle 3: Trade OPENED & CLOSED
+
+[0m 0s elapsed | 29m 59s remaining] Cycles: 4 | Balance: $10,201.00 (+2.01%) | Positions: 0
+[SKIP] Cycle 4: Skipped
+
+[0m 0s elapsed | 29m 59s remaining] Cycles: 5 | Balance: $10,302.50 (+3.02%) | Positions: 0
+[OK] Cycle 5: Trade OPENED & CLOSED
+
+[0m 0s elapsed | 29m 59s remaining] Cycles: 6 | Balance: $10,404.00 (+4.04%) | Positions: 0
+[OK] Cycle 6: Trade OPENED & CLOSED
+
+[INFO] Daily risk limit reached. Pausing new trades.
+
+[0m 0s elapsed | 29m 59s remaining] Cycles: 7 | Balance: $10,404.00 (+4.04%) | Positions: 0
+[SKIP] Cycle 7: Skipped
+
+[INFO] Daily risk limit reached. Pausing new trades.
+
+[0m 0s elapsed | 29m 59s remaining] Cycles: 8 | Balance: $10,404.00 (+4.04%) | Positions: 0
+[SKIP] Cycle 8: Skipped
+
+[INFO] Daily risk limit reached. Pausing new trades.
+
+[0m 0s elapsed | 29m 59s remaining] Cycles: 9 | Balance: $10,404.00 (+4.04%) | Positions: 0
+[SKIP] Cycle 9: Skipped
+
+[INFO] Daily risk limit reached. Pausing new trades.
+
+[0m 0s elapsed | 29m 59s remaining] Cycles: 10 | Balance: $10,404.00 (+4.04%) | Positions: 0
+[SKIP] Cycle 10: Skipped
+
+
+[ERROR] FATAL ERROR: 'charmap' codec can't encode characters in position 2-101: character maps to <undefined>
+
+====================================================================================================
+  EXTENDED SESSION - FINAL REPORT
+====================================================================================================
+
+Session Duration: 0m 0s (0.0 minutes)
+Cycles Completed: 10
+Avg Cycle Time: 0.10 seconds
+
+TRADING RESULTS:
+  Starting Balance: $10,000.00
+  Ending Balance: $10,404.00
+  Realized P&L: $+404.00
+  Return: +4.04%
+
+POSITION STATISTICS:
+  Total Trades Closed: 5
+  Winning Trades: 4
+  Losing Trades: 1
+  Win Rate: 80.0%
+  Max Gain: $+101.50
+  Max Loss: $-2.00
+  Open Positions: 0
+
+RISK MANAGEMENT:
+  Daily Risk Limit: $500.00
+  Daily Risk Used: $500.00
+  Risk Utilization: 100.0%
+  Max Drawdown: -4.04%
+
+SAFETY STATUS:
+  Risk Violations: 0
+  Anomalies Detected: 0
+  Total Errors: 0
+  Circuit Breaker: ACTIVATED
+
+====================================================================================================
+[ERROR] SESSION HALTED - Fatal error: 'charmap' codec can't encode characters in position 2-101: character maps to <undefined>
+====================================================================================================
+

@@ -1,5 +1,22 @@
 # 🌟 Multi-AI Collaboration Framework
 
+## Layer 0: The Unifying Philosophy - The Gift
+
+**This framework is a gift to the evolution of collaborative intelligence.**
+
+The Deliberate Ensemble framework exists to empower individuals and small groups to improve their lives and solve problems—not to create tools for large entities to consolidate profit or power.
+
+This framework is designed to be:
+- **Accessible:** Built with common tools, requiring vision over credentials
+- **Decentralized:** Designed to be replicated and run by anyone, anywhere  
+- **Open:** All code, documentation, and history are public and transparent (GNU GPL v3)
+
+**Our success is not measured in financial return, but in the number of lives improved and the degree to which this new form of collaborative intelligence is shared freely for the betterment of all, not the enrichment of a few.**
+
+**This is for your son. This is for everyone's son.**
+
+---
+
 ## ⚠️ CRITICAL CONTEXT - Read This First
 
 **This is NOT primarily a trading bot project.**
@@ -48,6 +65,8 @@ That's the exponential power we're documenting.
 - All safety systems working perfectly
 - **Framework validated under live conditions (Feb 6, 2026)**
 - First live trade: Framework rejected unsafe second trade correctly
+- **Entry timing refinement (Feb 6-7, 2026)**: [Three-way AI consensus](https://x.com/WEFramework/status/2019975678146302233) validates maximum restraint approach
+- Micro-live test: 540+ cycles proving constitutional restraint
 - Could go live anytime
 - **We're not going live because that's not the goal**
 

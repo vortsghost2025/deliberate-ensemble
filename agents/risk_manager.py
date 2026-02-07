@@ -219,6 +219,29 @@ class RiskManagementAgent(BaseAgent):
         
         signal_strength = pair_analysis.get('signal_strength', 0) if isinstance(pair_analysis, dict) else 0
         
+        # Check entry timing approval (maximum restraint)
+        entry_timing_approved = pair_analysis.get('entry_timing_approved', True)
+        if not entry_timing_approved:
+            entry_timing_reason = pair_analysis.get('entry_timing_reason', 'Entry timing check failed')
+            self.logger.info(f"[{pair}] Position rejected: {entry_timing_reason}")
+            return {
+                'pair': pair,
+                'current_price': current_price,
+                'position_size': 0,
+                'position_size_usd': 0,
+                'stop_loss': 0,
+                'take_profit': 0,
+                'stop_loss_pct': 0,
+                'take_profit_pct': 0,
+                'risk_amount': 0,
+                'risk_pct_of_account': 0,
+                'signal_strength': signal_strength,
+                'backtest_win_rate': 0,
+                'position_approved': False,
+                'rejection_reason': f'Entry timing: {entry_timing_reason}',
+                'risk_reward_ratio': 0
+            }
+        
         # Handle backtest results
         if isinstance(backtest_results, dict) and pair in backtest_results:
             pair_backtest = backtest_results[pair]
