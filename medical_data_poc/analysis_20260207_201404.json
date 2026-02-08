@@ -1,0 +1,239 @@
+{
+  "timestamp": "2026-02-07T20:14:04.679328",
+  "input_symptoms": [
+    "abdominal_pain"
+  ],
+  "analysis": {
+    "total_matches": 10,
+    "high_confidence": [
+      {
+        "disease": "Chronic cholestasis",
+        "confidence": 1.0,
+        "matching_symptoms": [
+          "abdominal_pain"
+        ],
+        "all_symptoms": [
+          "itching",
+          "vomiting",
+          "yellowish_skin",
+          "nausea",
+          "loss_of_appetite",
+          "abdominal_pain",
+          "yellowing_of_eyes"
+        ]
+      },
+      {
+        "disease": "Chronic cholestasis",
+        "confidence": 1.0,
+        "matching_symptoms": [
+          "abdominal_pain"
+        ],
+        "all_symptoms": [
+          "vomiting",
+          "yellowish_skin",
+          "nausea",
+          "loss_of_appetite",
+          "abdominal_pain",
+          "yellowing_of_eyes"
+        ]
+      },
+      {
+        "disease": "Chronic cholestasis",
+        "confidence": 1.0,
+        "matching_symptoms": [
+          "abdominal_pain"
+        ],
+        "all_symptoms": [
+          "itching",
+          "yellowish_skin",
+          "nausea",
+          "loss_of_appetite",
+          "abdominal_pain",
+          "yellowing_of_eyes"
+        ]
+      },
+      {
+        "disease": "Chronic cholestasis",
+        "confidence": 1.0,
+        "matching_symptoms": [
+          "abdominal_pain"
+        ],
+        "all_symptoms": [
+          "itching",
+          "vomiting",
+          "nausea",
+          "loss_of_appetite",
+          "abdominal_pain",
+          "yellowing_of_eyes"
+        ]
+      },
+      {
+        "disease": "Chronic cholestasis",
+        "confidence": 1.0,
+        "matching_symptoms": [
+          "abdominal_pain"
+        ],
+        "all_symptoms": [
+          "itching",
+          "vomiting",
+          "yellowish_skin",
+          "loss_of_appetite",
+          "abdominal_pain",
+          "yellowing_of_eyes"
+        ]
+      },
+      {
+        "disease": "Chronic cholestasis",
+        "confidence": 1.0,
+        "matching_symptoms": [
+          "abdominal_pain"
+        ],
+        "all_symptoms": [
+          "itching",
+          "vomiting",
+          "yellowish_skin",
+          "nausea",
+          "abdominal_pain",
+          "yellowing_of_eyes"
+        ]
+      },
+      {
+        "disease": "Chronic cholestasis",
+        "confidence": 1.0,
+        "matching_symptoms": [
+          "abdominal_pain"
+        ],
+        "all_symptoms": [
+          "itching",
+          "vomiting",
+          "yellowish_skin",
+          "nausea",
+          "loss_of_appetite",
+          "abdominal_pain"
+        ]
+      },
+      {
+        "disease": "Chronic cholestasis",
+        "confidence": 1.0,
+        "matching_symptoms": [
+          "abdominal_pain"
+        ],
+        "all_symptoms": [
+          "itching",
+          "vomiting",
+          "yellowish_skin",
+          "nausea",
+          "loss_of_appetite",
+          "abdominal_pain",
+          "yellowing_of_eyes"
+        ]
+      },
+      {
+        "disease": "Chronic cholestasis",
+        "confidence": 1.0,
+        "matching_symptoms": [
+          "abdominal_pain"
+        ],
+        "all_symptoms": [
+          "itching",
+          "vomiting",
+          "yellowish_skin",
+          "nausea",
+          "loss_of_appetite",
+          "abdominal_pain",
+          "yellowing_of_eyes"
+        ]
+      },
+      {
+        "disease": "Chronic cholestasis",
+        "confidence": 1.0,
+        "matching_symptoms": [
+          "abdominal_pain"
+        ],
+        "all_symptoms": [
+          "itching",
+          "vomiting",
+          "yellowish_skin",
+          "nausea",
+          "loss_of_appetite",
+          "abdominal_pain",
+          "yellowing_of_eyes"
+        ]
+      }
+    ],
+    "medium_confidence": [],
+    "low_confidence": []
+  },
+  "top_diagnoses": [
+    {
+      "disease": "Chronic cholestasis",
+      "confidence": "100.0%",
+      "matching_symptoms": [
+        "abdominal_pain"
+      ],
+      "description": "Chronic cholestatic diseases, whether occurring in infancy, childhood or adulthood, are characterized by defective bile acid transport from the liver to the intestine, which is caused by primary damage to the biliary epithelium in most cases",
+      "precautions": [
+        "cold baths",
+        "anti itch medicine",
+        "consult doctor",
+        "eat healthy"
+      ]
+    },
+    {
+      "disease": "Chronic cholestasis",
+      "confidence": "100.0%",
+      "matching_symptoms": [
+        "abdominal_pain"
+      ],
+      "description": "Chronic cholestatic diseases, whether occurring in infancy, childhood or adulthood, are characterized by defective bile acid transport from the liver to the intestine, which is caused by primary damage to the biliary epithelium in most cases",
+      "precautions": [
+        "cold baths",
+        "anti itch medicine",
+        "consult doctor",
+        "eat healthy"
+      ]
+    },
+    {
+      "disease": "Chronic cholestasis",
+      "confidence": "100.0%",
+      "matching_symptoms": [
+        "abdominal_pain"
+      ],
+      "description": "Chronic cholestatic diseases, whether occurring in infancy, childhood or adulthood, are characterized by defective bile acid transport from the liver to the intestine, which is caused by primary damage to the biliary epithelium in most cases",
+      "precautions": [
+        "cold baths",
+        "anti itch medicine",
+        "consult doctor",
+        "eat healthy"
+      ]
+    },
+    {
+      "disease": "Chronic cholestasis",
+      "confidence": "100.0%",
+      "matching_symptoms": [
+        "abdominal_pain"
+      ],
+      "description": "Chronic cholestatic diseases, whether occurring in infancy, childhood or adulthood, are characterized by defective bile acid transport from the liver to the intestine, which is caused by primary damage to the biliary epithelium in most cases",
+      "precautions": [
+        "cold baths",
+        "anti itch medicine",
+        "consult doctor",
+        "eat healthy"
+      ]
+    },
+    {
+      "disease": "Chronic cholestasis",
+      "confidence": "100.0%",
+      "matching_symptoms": [
+        "abdominal_pain"
+      ],
+      "description": "Chronic cholestatic diseases, whether occurring in infancy, childhood or adulthood, are characterized by defective bile acid transport from the liver to the intestine, which is caused by primary damage to the biliary epithelium in most cases",
+      "precautions": [
+        "cold baths",
+        "anti itch medicine",
+        "consult doctor",
+        "eat healthy"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+{
+  "timestamp": "2026-02-07T20:01:22.643548",
+  "input_symptoms": [
+    "itching",
+    "skin_rash",
+    "nodal_skin_eruptions"
+  ],
+  "analysis": {
+    "total_matches": 10,
+    "high_confidence": [
+      {
+        "disease": "Fungal infection",
+        "confidence": 1.0,
+        "matching_symptoms": [
+          "itching",
+          "nodal_skin_eruptions",
+          "skin_rash"
+        ],
+        "all_symptoms": [
+          "itching",
+          "skin_rash",
+          "nodal_skin_eruptions",
+          "dischromic _patches"
+        ]
+      },
+      {
+        "disease": "Fungal infection",
+        "confidence": 1.0,
+        "matching_symptoms": [
+          "itching",
+          "nodal_skin_eruptions",
+          "skin_rash"
+        ],
+        "all_symptoms": [
+          "itching",
+          "skin_rash",
+          "nodal_skin_eruptions"
+        ]
+      },
+      {
+        "disease": "Fungal infection",
+        "confidence": 1.0,
+        "matching_symptoms": [
+          "itching",
+          "nodal_skin_eruptions",
+          "skin_rash"
+        ],
+        "all_symptoms": [
+          "itching",
+          "skin_rash",
+          "nodal_skin_eruptions"
+        ]
+      },
+      {
+        "disease": "Fungal infection",
+        "confidence": 1.0,
+        "matching_symptoms": [
+          "itching",
+          "nodal_skin_eruptions",
+          "skin_rash"
+        ],
+        "all_symptoms": [
+          "itching",
+          "skin_rash",
+          "nodal_skin_eruptions",
+          "dischromic _patches"
+        ]
+      },
+      {
+        "disease": "Fungal infection",
+        "confidence": 1.0,
+        "matching_symptoms": [
+          "itching",
+          "nodal_skin_eruptions",
+          "skin_rash"
+        ],
+        "all_symptoms": [
+          "itching",
+          "skin_rash",
+          "nodal_skin_eruptions",
+          "dischromic _patches"
+        ]
+      },
+      {
+        "disease": "Fungal infection",
+        "confidence": 1.0,
+        "matching_symptoms": [
+          "itching",
+          "nodal_skin_eruptions",
+          "skin_rash"
+        ],
+        "all_symptoms": [
+          "itching",
+          "skin_rash",
+          "nodal_skin_eruptions"
+        ]
+      },
+      {
+        "disease": "Fungal infection",
+        "confidence": 1.0,
+        "matching_symptoms": [
+          "itching",
+          "nodal_skin_eruptions",
+          "skin_rash"
+        ],
+        "all_symptoms": [
+          "itching",
+          "skin_rash",
+          "nodal_skin_eruptions"
+        ]
+      },
+      {
+        "disease": "Fungal infection",
+        "confidence": 1.0,
+        "matching_symptoms": [
+          "itching",
+          "nodal_skin_eruptions",
+          "skin_rash"
+        ],
+        "all_symptoms": [
+          "itching",
+          "skin_rash",
+          "nodal_skin_eruptions",
+          "dischromic _patches"
+        ]
+      },
+      {
+        "disease": "Fungal infection",
+        "confidence": 1.0,
+        "matching_symptoms": [
+          "itching",
+          "nodal_skin_eruptions",
+          "skin_rash"
+        ],
+        "all_symptoms": [
+          "itching",
+          "skin_rash",
+          "nodal_skin_eruptions",
+          "dischromic _patches"
+        ]
+      },
+      {
+        "disease": "Fungal infection",
+        "confidence": 1.0,
+        "matching_symptoms": [
+          "itching",
+          "nodal_skin_eruptions",
+          "skin_rash"
+        ],
+        "all_symptoms": [
+          "itching",
+          "skin_rash",
+          "nodal_skin_eruptions"
+        ]
+      }
+    ],
+    "medium_confidence": [],
+    "low_confidence": []
+  },
+  "top_diagnoses": [
+    {
+      "disease": "Fungal infection",
+      "confidence": "100.0%",
+      "matching_symptoms": [
+        "itching",
+        "nodal_skin_eruptions",
+        "skin_rash"
+      ],
+      "description": "In humans, fungal infections occur when an invading fungus takes over an area of the body and is too much for the immune system to handle. Fungi can live in the air, soil, water, and plants. There are also some fungi that live naturally in the human body. Like many microbes, there are helpful fungi and harmful fungi.",
+      "precautions": [
+        "bath twice",
+        "use detol or neem in bathing water",
+        "keep infected area dry",
+        "use clean cloths"
+      ]
+    },
+    {
+      "disease": "Fungal infection",
+      "confidence": "100.0%",
+      "matching_symptoms": [
+        "itching",
+        "nodal_skin_eruptions",
+        "skin_rash"
+      ],
+      "description": "In humans, fungal infections occur when an invading fungus takes over an area of the body and is too much for the immune system to handle. Fungi can live in the air, soil, water, and plants. There are also some fungi that live naturally in the human body. Like many microbes, there are helpful fungi and harmful fungi.",
+      "precautions": [
+        "bath twice",
+        "use detol or neem in bathing water",
+        "keep infected area dry",
+        "use clean cloths"
+      ]
+    },
+    {
+      "disease": "Fungal infection",
+      "confidence": "100.0%",
+      "matching_symptoms": [
+        "itching",
+        "nodal_skin_eruptions",
+        "skin_rash"
+      ],
+      "description": "In humans, fungal infections occur when an invading fungus takes over an area of the body and is too much for the immune system to handle. Fungi can live in the air, soil, water, and plants. There are also some fungi that live naturally in the human body. Like many microbes, there are helpful fungi and harmful fungi.",
+      "precautions": [
+        "bath twice",
+        "use detol or neem in bathing water",
+        "keep infected area dry",
+        "use clean cloths"
+      ]
+    },
+    {
+      "disease": "Fungal infection",
+      "confidence": "100.0%",
+      "matching_symptoms": [
+        "itching",
+        "nodal_skin_eruptions",
+        "skin_rash"
+      ],
+      "description": "In humans, fungal infections occur when an invading fungus takes over an area of the body and is too much for the immune system to handle. Fungi can live in the air, soil, water, and plants. There are also some fungi that live naturally in the human body. Like many microbes, there are helpful fungi and harmful fungi.",
+      "precautions": [
+        "bath twice",
+        "use detol or neem in bathing water",
+        "keep infected area dry",
+        "use clean cloths"
+      ]
+    },
+    {
+      "disease": "Fungal infection",
+      "confidence": "100.0%",
+      "matching_symptoms": [
+        "itching",
+        "nodal_skin_eruptions",
+        "skin_rash"
+      ],
+      "description": "In humans, fungal infections occur when an invading fungus takes over an area of the body and is too much for the immune system to handle. Fungi can live in the air, soil, water, and plants. There are also some fungi that live naturally in the human body. Like many microbes, there are helpful fungi and harmful fungi.",
+      "precautions": [
+        "bath twice",
+        "use detol or neem in bathing water",
+        "keep infected area dry",
+        "use clean cloths"
+      ]
+    }
+  ]
+}
